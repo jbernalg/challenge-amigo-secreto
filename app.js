@@ -9,8 +9,8 @@ function agregarAmigo() {
     let nombreIngresado = document.getElementById('amigo').value;
 
     // validar que el nombre ingresado tenga el formato correcto
-    if (nombreIngresado.trim() === '') {
-        alert('Ingrese un nombre correcto');
+    if (nombreIngresado.trim() === '' || listaNombres.includes(nombreIngresado)) {
+        alert('Por favor, ingresa un nombre valido y no repetido');
         return;
     } else {
         
@@ -24,7 +24,8 @@ function agregarAmigo() {
         
         // limpia la entrada de datos
         limpiarCaja();
-    
+        
+        // mostrar lista de nombres
         mostrarListaDeNombres();
         
     }

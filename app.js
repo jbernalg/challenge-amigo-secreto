@@ -13,29 +13,45 @@ function agregarAmigo() {
         alert('Ingrese un nombre correcto');
         return;
     } else {
-    
+        
+        // agregar el nombre a la lista
         listaNombres.push(nombreIngresado);
 
         // mostrar por consola
         for(let i=0; i < listaNombres.length; i++){
             console.log(listaNombres[i]);
         }  
-    
+        
+        // limpia la entrada de datos
         limpiarCaja();
     
-        for(let i=0; i < listaNombres.length; i++){
-            asignarTextoElemento('ul', listaNombres[i]);
-        } 
+        mostrarListaDeNombres();
+        
     }
 
 }
+
 
 function limpiarCaja() {
     document.querySelector('#amigo').value='';
 }
 
-function asignarNombreElemento(elemento, nombre) {
+
+function mostrarListaDeNombres(){
+    let listaHTML = document.querySelector('#listaAmigos');
+    listaHTML.innerHTML = '';
+
+    for (let i = 0; i < listaNombres.length; i++){
+        let listaItems = document.createElement('li');
+        listaItems.textContent = listaNombres[i];
+        listaHTML.appendChild(listaItems);
+    }
+    return;
+}
+
+// funcion que asigna un texto a un elemento HTML
+function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
-    elementoHTML.innerHTML += `${nombre}\n`;
+    elementoHTML.innerHTML = texto;
     return;
 }

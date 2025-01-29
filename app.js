@@ -5,31 +5,40 @@
 let listaNombres = [];
 
 function agregarAmigo() {
+    
     // capturar el nombre ingresado en la entrada
     let nombreIngresado = document.getElementById('amigo').value;
 
-    // validar que el nombre ingresado tenga el formato correcto
+    // nombre repetido o en formato inadecuado 
     if (nombreIngresado.trim() === '' || listaNombres.includes(nombreIngresado)) {
         alert('Por favor, ingresa un nombre valido y no repetido');
-        return;
-    } else {
-        
-        // agregar el nombre a la lista
-        listaNombres.push(nombreIngresado);
-
-        // mostrar por consola
-        for(let i=0; i < listaNombres.length; i++){
-            console.log(listaNombres[i]);
-        }  
-        
-        // limpia la entrada de datos
         limpiarCaja();
-        
-        // mostrar lista de nombres
-        mostrarListaDeNombres();
-        
+        return;  
+    } else {
+        // nombre valido
+        if (validarNombre(nombreIngresado) == true){
+            
+            // agregar el nombre a la lista
+            listaNombres.push(nombreIngresado); 
+            // limpia la entrada de datos
+            limpiarCaja();
+            // mostrar lista de nombres
+            mostrarListaDeNombres();
+
+          // nombre con caracteres incorrectos
+        } else{
+            alert('Por favor, ingrese un nombre con los caracteres correctos!');
+            limpiarCaja();
+        }
     }
 
+}
+
+function validarNombre(nombre){
+    // expresion regular que solo acepta letras
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    // valida si nombre contiene solo letras
+    return regex.test(nombre);
 }
 
 
@@ -39,20 +48,19 @@ function limpiarCaja() {
 
 
 function mostrarListaDeNombres(){
+    // buscamos elemento ul por su id
     let listaHTML = document.querySelector('#listaAmigos');
+    // limpiar lista
     listaHTML.innerHTML = '';
 
+    // iterar sobre la lista y mostrar cada nombre
     for (let i = 0; i < listaNombres.length; i++){
+        // crea un elemento li
         let listaItems = document.createElement('li');
+        // asigna el nombre a li
         listaItems.textContent = listaNombres[i];
+        // agrega li a ul
         listaHTML.appendChild(listaItems);
     }
-    return;
-}
-
-// funcion que asigna un texto a un elemento HTML
-function asignarTextoElemento(elemento, texto) {
-    let elementoHTML = document.querySelector(elemento);
-    elementoHTML.innerHTML = texto;
     return;
 }

@@ -64,3 +64,18 @@ function mostrarListaDeNombres(){
     }
     return;
 }
+
+function sortearAmigo(){
+
+    size_lista = listaNombres.length;
+
+    if(size_lista == 0) {
+        alert('Agrega al menos un amigo');
+    } else {
+        let numeroAleatorio = Math.floor(Math.random()*size_lista);
+        console.log(numeroAleatorio)
+        //alert(`El amigo sorteado es: ${listaNombres[numeroAleatorio]}`);
+        let amigoHTML = document.querySelector('#resultado');
+        amigoHTML.innerHTML = listaNombres[numeroAleatorio];
+    }
+}

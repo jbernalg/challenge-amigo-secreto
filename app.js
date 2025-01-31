@@ -14,41 +14,47 @@ function agregarAmigo() {
     // capturar el nombre ingresado en la entrada
     let nombreIngresado = document.getElementById('amigo').value;
 
-    // nombre repetido o en formato inadecuado 
-    if (nombreIngresado.trim() === '' || amigos.includes(nombreIngresado)) {
-        alert('Por favor, inserte un nombre valido no repetido');
+    // si el nombre es valido, agregarlo a la lista y mostrar lista
+    if (validarNombre(nombreIngresado) == true){
+        // agregar el nombre a la lista
+        amigos.push(nombreIngresado); 
+        // limpia la entrada de datos
         limpiarCaja();
-        return;  
-    } else {
-        // nombre valido
-        if (validarNombre(nombreIngresado) == true){
-            
-            // agregar el nombre a la lista
-            amigos.push(nombreIngresado); 
-            // limpia la entrada de datos
-            limpiarCaja();
-            // mostrar lista de amigos
-            mostrarListaDeAmigos();
-
-          // nombre con caracteres incorrectos
-        } else{
-            alert('Por favor, inserte un nombre con los caracteres correctos!');
-            limpiarCaja();
-        }
+        // mostrar lista de amigos
+        mostrarListaDeAmigos()
     }
+
 
 }
 
 function validarNombre(nombre){
     /*
-    funcion que retorna true si el nombre pasado como parametro
-    posee los caracteres adecuados, false de lo contrario
+    funcion que retorna true si el nombre no es vacio, no esta
+    en la lista y posee solo letras. Retorna false en caso contrario
     */
+   band = true;
 
+    if (nombre.trim() === '') {
+        alert('Por favor, ingrese un nombre valido');
+        limpiarCaja();
+        band = false;
+    }  
+        
+    if (amigos.includes(nombre)) {
+        alert('Este nombre ya ha sido ingesado. Intenta con otro');
+        limpiarCaja();
+        band = false;
+    }
+    
     // expresion regular que solo acepta letras
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-    // valida si nombre contiene solo letras
-    return regex.test(nombre);
+    if (regex.test(nombre) == false){
+        alert('Por favor, inserte un nombre con los caracteres correctos!');
+        limpiarCaja();
+        band = false;
+    }
+
+    return band;
 }
 
 

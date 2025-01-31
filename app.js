@@ -23,22 +23,15 @@ function agregarAmigo() {
         // mostrar lista de amigos
         mostrarListaDeAmigos()
     }
-
-
 }
+
 
 function validarNombre(nombre){
     /*
-    funcion que retorna true si el nombre no es vacio, no esta
-    en la lista y posee solo letras. Retorna false en caso contrario
+    funcion que retorna true si el nombre no esta en la lista y 
+    posee solo letras. Retorna false en caso contrario
     */
    band = true;
-
-    if (nombre.trim() === '') {
-        alert('Por favor, ingrese un nombre valido');
-        limpiarCaja();
-        band = false;
-    }  
         
     if (amigos.includes(nombre)) {
         alert('Este nombre ya ha sido ingesado. Intenta con otro');

@@ -19,6 +19,9 @@ Consiste en añadir el nombre de amigos, la cantidad que desees, para luego sort
 
  ![sortear amigos](https://github.com/user-attachments/assets/6e449fe2-fce4-4c5d-a78d-c0c89210e96f)
 
+## Acceso al Proyecto
+En el siguiente enlace puedes acceder a la web del proyecto: [Juego del amigo secreto](https://jbernalg.github.io/challenge-amigo-secreto/) 
+
 ## Tecnologias utilizadas
 - Javascript
 - CSS

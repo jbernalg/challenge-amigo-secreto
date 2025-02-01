@@ -40,8 +40,8 @@ function validarNombre(nombre){
     }
     
     // expresion regular que solo acepta letras
-    const regex = /^[a-zA-ZÀ-ÿ]+(?: [a-zA-ZÀ-ÿ]+)*$/;
-    if (regex.test(nombre) == false){
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(\s[A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
+    if (regex.test(nombre.trim()) == false){
         alert('Por favor, inserte un nombre con los caracteres correctos!');
         limpiarCaja();
         band = false;

@@ -16,5 +16,12 @@ Consiste en añadir el nombre de amigos, la cantidad que desees, para luego sort
 ![nombre duplicado](https://github.com/user-attachments/assets/3c14acc3-4103-4f02-a682-8fa16a147751)
 
 - `Funcionalidad 2`: Sortea los nombres de los amigos para obtener uno. Al agregar los nombres necesarios, haz clic en "Sortear amigo" y el sistema seleccionara aleatoriamente uno de ellos para mostrarlo en la web con letra de color verde.
-![sortear amigos](https://github.com/user-attachments/assets/6e449fe2-fce4-4c5d-a78d-c0c89210e96f)
 
+ ![sortear amigos](https://github.com/user-attachments/assets/6e449fe2-fce4-4c5d-a78d-c0c89210e96f)
+
+## Tecnologias utilizadas
+- Javascript
+- CSS
+- HTML
+
+## Autor

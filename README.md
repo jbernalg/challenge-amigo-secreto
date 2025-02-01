@@ -25,3 +25,4 @@ Consiste en añadir el nombre de amigos, la cantidad que desees, para luego sort
 - HTML
 
 ## Autor
+[<img src="https://avatars.githubusercontent.com/u/99054174?v=4" width=115><br><sub>Jeinfferson Bernal</sub>](https://github.com/jbernalg)
